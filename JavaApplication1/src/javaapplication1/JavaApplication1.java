@@ -36,20 +36,24 @@ public class JavaApplication1 {
         
         float puntoFlotanteCorto;
             puntoFlotanteCorto = 3.1416f;
-            System.out.print("variable puntoFlotanteCorto: ");
+            System.out.print("variable puntoFlotanteCortogit: ");
             System.out.println(puntoFlotanteCorto);
             
         boolean logico;
             logico = false;
+            System.out.print("variable lógico: ");
             System.out.println(logico);
             
         long enteroGrande = 1000000;
+            System.out.print("variable enteroGrande: ");
             System.out.println(enteroGrande);
             
         short enteroCorto = -4500;
+            System.out.print("variable enteroCorto: ");
             System.out.println(enteroCorto);
             
         byte enteroCortito = -8;
+            System.out.print("variable enteroCortito: ");
             System.out.println(enteroCortito);
             
             
@@ -60,6 +64,52 @@ public class JavaApplication1 {
     boolean bandera = false;
     */ 
         
+/*  
+EJERCICIO 3
+Define variables donde puedas alojar los resultados y prueba usar dos operadores de cada tipo
+*/
+
+int num1 = 5;
+float num3;
+double resultado;
+long num2 = 7;
+boolean bandera;
+
+bandera = num1<num2;
+resultado = (9)/2f;
+        System.out.println("ejercicio3");
+        System.out.print("variable int : ");
+        System.out.println(num1);
+        System.out.print("variable double : ");
+        System.out.println(resultado);
+        System.out.print("variable long : ");
+        System.out.println(num2);
+        System.out.print("variable boolean : " + bandera + " ");
+        System.out.println(bandera);
+        
+        num3 = num1++;
+        System.out.print("num1++: ");
+        System.out.println(num3);
+        num3 = num2--;
+        System.out.print("num2--: ");
+        System.out.println(num3);
+        
+/*
+        EJERCICIO 4
+Define una variable que aloje tu nombre y otra que guarde tu edad. Imprime ambas variables
+por pantalla.
+        
+        */
+        System.out.println("");
+        System.out.println("ejercicio4");
+short edad = 43;
+String nombre = "Andres";
+
+        System.out.println(nombre + " tiene " + edad + " años.");
+
+
+
+
     }
     
     

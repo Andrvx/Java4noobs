@@ -23,7 +23,7 @@ public static void main(String[] args){
     
     int suma1 = 0;
     int numero;
-    int contador = 0;
+    int contador = 1;
     
     System.out.println("Ingrese 20 números");
     
@@ -34,13 +34,15 @@ public static void main(String[] args){
                 
         if (numero>0) {
             suma1 = (suma1 + numero);
-        }else{
-        break;
         }
-    } while (numero != 0) && (contador < 21);
+        if (numero==0) {
+            System.out.print("Se capturó el número cero. ");
+            break;
+        }
+    } while (contador<21);
     
             
-    System.out.println("Se capturó el número cero. Y la suma de los números positivos ingresados es " + suma1);
+    System.out.println("La suma de los números positivos ingresados es " + suma1);
 }
         
 }

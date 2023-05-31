@@ -33,13 +33,43 @@ public static void main(String[] args){
 
     frase = leer.next();
     
-    fraseCod = codificar(frase)
+    fraseCod = codificar(frase);
+    
     
 }    
 
 public static String codificar(String frase){
-    String fraseCod;
+    String fraseCod="";
     
+    int largo = frase.length();
+    
+    for (int i = 0; i < largo; i++){
+        /*
+        a e i o u
+        @ # $ % *
+        */
+        switch (frase.charAt(i)){
+            case 'a':
+                fraseCod.concat("@");                                                                                                                                                                              );
+            break;
+            case 'e':
+                fraseCod.concat("#");
+            break;
+            case 'i':
+                fraseCod.concat("$");
+            break;
+            case 'o':
+                fraseCod.concat("%");
+            break;
+            case 'u':
+                fraseCod.concat("*");
+            break;
+            default:
+                fraseCod.concat(frase.charAt(i));
+            break;
+        }
+                
+    }
     
     
     

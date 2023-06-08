@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /*
 20. Un cuadrado mágico 3 x 3 es una matriz 3 x 3 formada por números del 1 al 9 donde la
 suma de sus filas, sus columnas y sus diagonales son idénticas. Crear un programa que

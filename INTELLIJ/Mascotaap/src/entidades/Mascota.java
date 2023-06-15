@@ -1,4 +1,4 @@
-// 1-atributos 2-constructor 3-getter y setter 4-métodos funcionales 5-to stream???
+// 1-atributos 2-constructor 3-getter y setter 4-métodos funcionales 5-to string???
 package entidades;
 
 public class Mascota {

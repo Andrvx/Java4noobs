@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a6f0520c-fe99-4f9f-85f7-0370642d9ff0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../_01_POO_libro/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../_01_POO_libro/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../_01_POO_libro/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../_01_POO_libro/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../_01_POO_libro/_01_POO_libro.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../_01_POO_libro/src/Service/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../_01_POO_libro/src/entidades/Libro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_02_POO_circunferencia.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CircunferenciaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entidades/Circunferencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mascotaap/src/entidades/Mascota.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Mascotaap/src/entidades/Mascota.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2RDWeTZxuDbbj9WomvKVMWdzxRB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "onboarding.tips.debug.path": "C:/Users/andre/OneDrive/Escritorio/EGG/_JavaProy/INTELLIJ/_02_POO_circunferencia/src/Main.java"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6f0520c-fe99-4f9f-85f7-0370642d9ff0" name="Changes" comment="" />
+      <created>1686785233530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686785233530</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

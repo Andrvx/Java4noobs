@@ -16,15 +16,15 @@ public class Main {
         Scanner leer=new Scanner(System.in);
         CircunferenciaService CS=new CircunferenciaService();
 
-        System.out.printf("Decime un radio");
-        CS=
+        Circunferencia c1=new Circunferencia();
 
-        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("Decime un radio");
+        c1.setRadio(leer.nextFloat());
 
-            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        System.out.println("* Área de la circunferencia con radio "+c1.getRadio()+" es "+CS.Area(c1.getRadio()));
+        System.out.println("* Perímetro de la circunferencia con radio "+c1.getRadio()+" es "+CS.Perimetro(c1.getRadio()));
+
+
+
         }
     }
-}

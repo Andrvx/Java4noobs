@@ -15,8 +15,10 @@ public class ejEx06_estaturaProm {
 
         double[] vAlturas=new double[N];
 
+        System.out.println("Ingresá la altura de las "+N+" personas, en metros.");
+
         for (int i=0;i<N;i++){
-            System.out.println("Ingresá la altura de las "+N+" personas, en metros.");
+
             System.out.println("N° "+(i+1)+":");
             vAlturas[i]=leer.nextDouble();
         }

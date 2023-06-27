@@ -7,16 +7,17 @@ import entidades.Persona;
 import java.util.Scanner;
 
 public class ServiceP {
-    Scanner leer=new Scanner(System.in);
+    Scanner leer=new Scanner(System.in).useDelimiter("\n");
     // Metodo crearPersona(): el método crear persona, le pide los valores de los atributos
     //al usuario y después se le asignan a sus respectivos atributos para llenar el objeto
     //Persona. Además, comprueba que el sexo introducido sea correcto, es decir, H, M o
     //O. Si no es correcto se deberá mostrar un mensaje
     public Persona CrearPersona(){
+        System.out.println("-- Crear Persona --");
         Persona persona=new Persona();
 
         System.out.println("Ingrese el nombre de la persona");
-        persona.setNombre(leer.nextLine());
+        persona.setNombre(leer.next());
 
         System.out.println("Ingrese la edad");
         persona.setEdad(leer.nextInt());
@@ -24,7 +25,7 @@ public class ServiceP {
         boolean valid=false;
         do {
             System.out.println("Ingrese el sexo (H/M/O)");
-            String sexo=leer.nextLine();
+            String sexo=leer.next();
             sexo=sexo.toUpperCase();
             if (sexo.equalsIgnoreCase("H")||sexo.equalsIgnoreCase("M")||sexo.equalsIgnoreCase("O")){
                 switch (sexo){

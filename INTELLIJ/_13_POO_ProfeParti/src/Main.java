@@ -1,3 +1,8 @@
+import entidades.Curso;
+import service.ServiceCurso;
+
+import java.util.Scanner;
+
 // 13. Un profesor particular está dando cursos para grupos de cinco alumnos y necesita un
 //programa para organizar la información de cada curso. Para ello, crearemos una clase
 //entidad llamada Curso, cuyos atributos serán: nombreCurso, cantidadHorasPorDia,
@@ -21,6 +26,42 @@
 //se repite el encuentro.
 public class Main {
     public static void main(String[] args) {
+        Scanner leer=new Scanner(System.in);
+        ServiceCurso SC=new ServiceCurso();
+        Curso curso=new Curso();
 
+        System.out.println("*** Cursos Particulares ***");
+        System.out.println("");
+
+        boolean salir=false;
+        int opcion;
+        do {
+            do {
+                System.out.println("- Menú de opciones -");
+                System.out.println("  1- Crear Curso");
+                System.out.println("  2- Calcular Ganancia");
+                System.out.println("  3- Mostrar curso");
+                System.out.println("  4- Salir");
+                System.out.println("");
+                opcion= leer.nextInt();
+            } while (opcion!=1 && opcion!=2 && opcion!=3 && opcion!=4);
+
+            switch (opcion){
+                case 1:
+                    SC.crearCurso(curso);
+                    break;
+                case 2:
+                    System.out.println("- La ganancia semanal es de $ "+SC.calcularGananciaSemana(curso));
+                    System.out.println("");
+                    break;
+                case 3:
+                    System.out.println(curso.toString());
+                    break;
+                case 4:
+                    System.out.println("");
+                    System.out.println("Ok, bye!");
+                    salir=true;
+            }
+        } while (!salir);
     }
 }

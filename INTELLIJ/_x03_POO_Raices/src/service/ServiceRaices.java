@@ -23,15 +23,15 @@ public class ServiceRaices {
 //posibles soluciones.
     public void obtenerRaices(Raices raices){
         if (tieneRaices(raices)){
-            System.out.println("r1: "+((-raices.getB()+(Math.sqrt(Math.pow(raices.getB(),2)-(4* raices.getA()* raices.getB()))))/(2* raices.getA())));
-            System.out.println("r2: "+((-raices.getB()-(Math.sqrt(Math.pow(raices.getB(),2)-(4* raices.getA()* raices.getB()))))/(2* raices.getA())));
+            System.out.println("r1: "+((-raices.getB()+(Math.sqrt(Math.pow(raices.getB(),2)-(4* raices.getA()* raices.getC()))))/(2* raices.getA())));
+            System.out.println("r2: "+((-raices.getB()-(Math.sqrt(Math.pow(raices.getB(),2)-(4* raices.getA()* raices.getC()))))/(2* raices.getA())));
         }
     }
 // Método obtenerRaiz(): llama a tieneRaiz() y si devolvió́ true imprime una única raíz.
 //Es en el caso en que se tenga una única solución posible.
     public void obtenerRaiz(Raices raices){
         if (tieneRaiz(raices)){
-            System.out.println("r: "+((-raices.getB()+(Math.sqrt(Math.pow(raices.getB(),2)-(4* raices.getA()* raices.getB()))))/(2* raices.getA())));
+            System.out.println("r: "+((-raices.getB()+(Math.sqrt(Math.pow(raices.getB(),2)-(4* raices.getA()* raices.getC()))))/(2* raices.getA())));
         }
     }
 // Método calcular(): esté método llamará tieneRaices() y a tieneRaíz(), y mostrará por

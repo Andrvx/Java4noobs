@@ -7,6 +7,8 @@
 //hay entre esa fecha y la fecha actual, que se puede conseguir instanciando un objeto
 //Date con constructor vacío.
 
+import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.util.Date;
 import java.util.Scanner;
 

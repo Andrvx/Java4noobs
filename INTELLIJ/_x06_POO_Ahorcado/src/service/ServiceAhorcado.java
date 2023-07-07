@@ -21,20 +21,24 @@ public class ServiceAhorcado {
 
         ahorcado.setLargoPalabra(palabra.length());
 
-        ahorcado.setVectorPalabra(palabra.toCharArray());
+        ahorcado.setVectorPalabra(palabra);
 
         ahorcado.setVectorBuscando();
 
-        boolean valid= false;
-        do {
+        ahorcado.setLetrasYaBuscadas(" ");
+
+        boolean valid= true;
+        while (valid) {
             System.out.println("Cuántas jugadas se pueden hacer?");
             try {
                 ahorcado.setCantJugadas(leer.nextInt());
-                valid=true;
+                //leer.nextLine();
+                valid=false;
             }catch (InputMismatchException error){
                 System.out.println("Tenés que ingresar un número, tontuelo!");
+                leer.nextLine();
             }
-        } while (!valid);
+        }
 
         System.out.println("");
     }
@@ -46,13 +50,13 @@ public class ServiceAhorcado {
     }
     // Método buscar(letra): este método recibe una letra dada por el usuario y busca sila
 //letra ingresada es parte de la palabra o no. También informará si la letra estaba o no.
-    public void buscar(Ahorcado ahorcado,char letra){
+    public void buscar(Ahorcado ahorcado,String letra){
         int contador=0;
 
         ahorcado.setLetrasYaBuscadas(letra);
 
         for (int i=0;i< ahorcado.getLargoPalabra();i++) {
-            if (ahorcado.getVectorPalabra()[i]==letra){
+            if (ahorcado.getVectorPalabra()[i].equalsIgnoreCase(letra)){
                 ahorcado.setVectorBuscando(i,letra);
                 contador++;
             }
@@ -61,6 +65,7 @@ public class ServiceAhorcado {
             ahorcado.setCantEncontradas(ahorcado.getCantEncontradas()+contador);
             System.out.println("La letra "+letra+" se encuentra "+contador+" veces en la palabra!");
             System.out.println(Arrays.toString(ahorcado.getVectorBuscando()));
+            System.out.println("Ya probaste con: "+ahorcado.getLetrasYaBuscadas());
         } else {
             System.out.println("Esa letra no está, mal ahí!");
             System.out.println("Ya probaste con: "+ahorcado.getLetrasYaBuscadas());
@@ -91,14 +96,12 @@ public class ServiceAhorcado {
         System.out.println(Arrays.toString(ahorcado.getVectorBuscando()));
         System.out.println("");
 
-        String aux;
-        char letra;
+        String letra;
         boolean ganar=false;
 
         while (intentos(ahorcado) && !ganar){
             System.out.println("Decime una letra");
-            aux=leer.next();
-            letra=aux.charAt(0);
+            letra=leer.next();
             buscar(ahorcado,letra);
 
             if (Arrays.equals(ahorcado.getVectorPalabra(), ahorcado.getVectorBuscando())){
@@ -107,11 +110,13 @@ public class ServiceAhorcado {
         }
 
         if (ganar){
-            System.out.println("Ganasteeeee!!!!");
+            System.out.println("");
+            System.out.println("     GANASTE!!!!");
             System.out.println(Arrays.toString(ahorcado.getVectorPalabra()));
             System.out.println("");
         }
         if (!intentos(ahorcado)){
+            System.out.println("");
             System.out.println("Se te terminaron las oportunidades, sorry :(");
             System.out.println("");
         }

@@ -6,8 +6,8 @@ package entidades;
 import java.util.Arrays;
 
 public class Ahorcado {
-    private char[] vectorPalabra;
-    private char[] vectorBuscando;
+    private String[] vectorPalabra;
+    private String[] vectorBuscando;
     private int largoPalabra;
     private int cantJugadas;
     private int cantEncontradas;
@@ -15,7 +15,7 @@ public class Ahorcado {
     public Ahorcado() {
     }
 
-    public Ahorcado(char[] vectorPalabra, char[] vectorBuscando, int largoPalabra, int cantJugadas, int cantEncontradas, String letrasYaBuscadas) {
+    public Ahorcado(String[] vectorPalabra, String[] vectorBuscando, int largoPalabra, int cantJugadas, int cantEncontradas, String letrasYaBuscadas) {
         this.vectorPalabra = vectorPalabra;
         this.vectorBuscando = vectorBuscando;
         this.largoPalabra = largoPalabra;
@@ -24,30 +24,29 @@ public class Ahorcado {
         this.letrasYaBuscadas = letrasYaBuscadas;
     }
 
-    public char[] getVectorPalabra() {
+    public String[] getVectorPalabra() {
         return vectorPalabra;
     }
 
-    public void setVectorPalabra(char[] vectorPalabra) {
-        this.vectorPalabra = vectorPalabra;
+    public void setVectorPalabra(String palabra) {
+        this.vectorPalabra=new String[palabra.length()];
+        for (int i=0;i<palabra.length();i++) {
+            this.vectorPalabra[i] = palabra.substring(i,i+1);
+        }
     }
 
-    public char[] getVectorBuscando() {
+    public String[] getVectorBuscando() {
         return vectorBuscando;
     }
 
     public void setVectorBuscando() {
-        char auxVar='_';
-        Arrays.fill(this.vectorBuscando,char);
-        /*
+        this.vectorBuscando=new String[this.largoPalabra];
         for (int i=0;i<this.vectorBuscando.length;i++) {
-            this.vectorBuscando[i] = auxVar;
+            this.vectorBuscando[i] = "_";
         }
-
-         */
     }
 
-    public void setVectorBuscando(int i,char letra) {
+    public void setVectorBuscando(int i,String letra) {
         this.vectorBuscando[i]=letra;
     }
 
@@ -79,8 +78,12 @@ public class Ahorcado {
         return letrasYaBuscadas;
     }
 
-    public void setLetrasYaBuscadas(char letra) {
-        this.letrasYaBuscadas += letra;
+    public void setLetrasYaBuscadas(String letra) {
+        if (letra.equals(" ")){
+            this.letrasYaBuscadas=" ";
+        } else {
+            this.letrasYaBuscadas += letra;
+        }
     }
 
     @Override

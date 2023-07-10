@@ -3,7 +3,7 @@ package entidades;
 import java.time.LocalDate;
 
 public class Alquiler {
-    private Pelicula película;
+    private Pelicula pelicula;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private boolean enProgreso;
@@ -11,19 +11,19 @@ public class Alquiler {
     public Alquiler() {
     }
 
-    public Alquiler(Pelicula película, LocalDate fechaInicio, LocalDate fechaFin, boolean enProgreso) {
-        this.película = película;
+    public Alquiler(Pelicula pelicula, LocalDate fechaInicio, LocalDate fechaFin, boolean enProgreso) {
+        this.pelicula = pelicula;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.enProgreso = enProgreso;
     }
 
-    public Pelicula getPelícula() {
-        return película;
+    public Pelicula getPelicula() {
+        return pelicula;
     }
 
-    public void setPelícula(Pelicula película) {
-        this.película = película;
+    public void setPelicula(Pelicula pelicula) {
+        this.pelicula = pelicula;
     }
 
     public LocalDate getFechaInicio() {
@@ -53,7 +53,7 @@ public class Alquiler {
     @Override
     public String toString() {
         return "Alquiler{" +
-                "película=" + película +
+                "película=" + pelicula +
                 ", fechaInicio=" + fechaInicio +
                 ", fechaFin=" + fechaFin +
                 ", enProgreso=" + enProgreso +

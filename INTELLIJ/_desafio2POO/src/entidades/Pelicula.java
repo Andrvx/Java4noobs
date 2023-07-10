@@ -7,12 +7,15 @@ public class Pelicula {
     private int anio;
     private int duracion;
 
-    public Pelicula(String titulo, String director, String genero, int anio, int duracion) {
+    private boolean alquilada;
+
+    public Pelicula(String titulo, String director, String genero, int anio, int duracion, boolean alquilada) {
         this.titulo = titulo;
         this.director = director;
         this.genero = genero;
         this.anio = anio;
         this.duracion = duracion;
+        this.alquilada = alquilada;
     }
 
     public Pelicula() {
@@ -74,14 +77,23 @@ public class Pelicula {
         this.duracion = duracion;
     }
 
+    public boolean isAlquilada() {
+        return alquilada;
+    }
+
+    public void setAlquilada(boolean alquilada) {
+        this.alquilada = alquilada;
+    }
+
     @Override
     public String toString() {
         return "Pelicula{" +
-                "Título='" + titulo + '\'' +
-                ", Director='" + director + '\'' +
-                ", Género='" + genero + '\'' +
-                ", Año=" + anio +
-                ", Duración=" + duracion +
+                "titulo='" + titulo + '\'' +
+                ", director='" + director + '\'' +
+                ", genero='" + genero + '\'' +
+                ", anio=" + anio +
+                ", duracion=" + duracion +
+                ", alquilada=" + alquilada +
                 '}';
     }
 }

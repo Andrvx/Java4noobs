@@ -1,7 +1,5 @@
 package servicio;
-
 import entidades.Cliente;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -77,5 +75,4 @@ public class ServicioCliente {
         }
         */
     }
-
 }

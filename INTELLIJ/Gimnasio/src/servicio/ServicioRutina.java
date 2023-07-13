@@ -1,8 +1,5 @@
 package servicio;
-
-import entidades.Cliente;
 import entidades.Rutina;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 

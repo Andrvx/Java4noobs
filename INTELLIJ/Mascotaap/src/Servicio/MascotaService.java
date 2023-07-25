@@ -1,11 +1,16 @@
 package Servicio;
-
 import entidades.Mascota;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MascotaService {
     private Scanner leer=new Scanner(System.in).useDelimiter("\n");
+    private ArrayList<String> mascotas;
+
+    public MascotaService(){
+        this.mascotas=new ArrayList<>();
+    }
 
     /**
      *

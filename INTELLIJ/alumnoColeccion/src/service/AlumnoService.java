@@ -1,7 +1,6 @@
 package service;
 
 import entidades.Alumno;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -14,6 +13,10 @@ import java.util.Scanner;
 public class AlumnoService {
     Scanner leer=new Scanner(System.in).useDelimiter("\n");
     ArrayList<Alumno> listaAlumnos=new ArrayList<>();
+
+    public ArrayList<Alumno> getListaAlumnos(){
+        return listaAlumnos;
+    }
 
     public void crearAlumno(){
         System.out.println("*** Crear Alumno ***");
@@ -65,9 +68,9 @@ public class AlumnoService {
     }
 
     public void mostrarListaAlumnos(){
-        for (int i = 0; i < listaAlumnos.size(); i++) {
-            System.out.print(listaAlumnos.get(i).getNombre()+" ");
-            System.out.println(listaAlumnos.get(i).getNotas().toString());
+        for (Alumno listaAlumno : listaAlumnos) {
+            System.out.print(listaAlumno.getNombre() + " ");
+            System.out.println(listaAlumno.getNotas().toString());
         }
     }
     //Método notaFinal(): El usuario ingresa el nombre del alumno que quiere calcular su nota
@@ -76,9 +79,9 @@ public class AlumnoService {
 //promedio final, devuelto por el método y mostrado en el main.
     public int notaFinal(String nombre){
         int sumaNotas=0;
-        for (int i = 0; i < listaAlumnos.size(); i++) {
-            if (listaAlumnos.get(i).getNombre().equals(nombre)){
-                for (int aux: listaAlumnos.get(i).getNotas()) {
+        for (Alumno listaAlumno : listaAlumnos) {
+            if (listaAlumno.getNombre().equals(nombre)) {
+                for (int aux : listaAlumno.getNotas()) {
                     sumaNotas += aux;
                 }
             }

@@ -1,5 +1,7 @@
+import entidades.Alumno;
 import service.AlumnoService;
-
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 // 3. Crear una clase llamada Alumno que mantenga información sobre las notas de distintos
@@ -18,13 +20,70 @@ public class Main {
         Scanner leer=new Scanner(System.in).useDelimiter("\n");
         AlumnoService aS=new AlumnoService();
 
-        aS.crearAlumno();
+        System.out.println("*** Programa Alumno ***");
 
-        aS.mostrarListaAlumnos();
+        boolean exit=false;
+        int opcion;
 
-        System.out.println("Decime el nombre del alumno para calcular el promedio");
-        String nombreAux=leer.next();
+        ArrayList<Alumno> listaAlumnosMain= aS.getListaAlumnos();
 
-        System.out.println(aS.notaFinal("choto"));
+        do {
+            System.out.println("--- Menú ---");
+            System.out.println("   1 - Cargar alumnos");
+            System.out.println("   2 - Calcular nota promedio");
+            System.out.println("   3 - Mostrar Lista de alumnos");
+            System.out.println("   4 - Salir");
+
+            boolean valid=false;
+            do {
+                try {
+                    opcion = leer.nextInt();
+
+                    switch (opcion){
+                        case 1:
+                            aS.crearAlumno();
+                            valid=true;
+                            break;
+                        case 2:
+                            System.out.println("Ingrese el nombre del alumno");
+                            String nombre= leer.next();
+                            leer.nextLine();
+                            int contador=0;
+                            for (Alumno alumno : listaAlumnosMain) {
+                                if (alumno.getNombre().equalsIgnoreCase(nombre)) {
+                                    contador++;
+                                }
+                            }
+                            if (contador==0){
+                                System.out.println("El alumno no existe");
+                                System.out.println("");
+                            } else {
+                                System.out.println("El promedio del alumno "+nombre+" es: "+aS.notaFinal(nombre)+".");
+                                System.out.println("");
+                            }
+                            valid=true;
+                            break;
+                        case 3:
+                            aS.mostrarListaAlumnos();
+                            System.out.println("");
+                            valid=true;
+                            break;
+                        case 4:
+                            exit=true;
+                            valid=true;
+                            break;
+                        default:
+                            System.out.println("Opción inválida.");
+                            System.out.println("");
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Opción inválida.");
+                    System.out.println("");
+                }
+
+            }while (!valid);
+
+        }while (!exit);
+        System.out.println("Byeeeee");
     }
 }

@@ -94,13 +94,7 @@ public class PeliculaServicio {
     }
 //• Mostrar en pantalla todas las películas con una duración mayor a 1 hora.
     public void mostrarLargometrajes(){
-
+        for (Pelicula pelicula: listaDePeliculas) if (pelicula.getDuracionDecimal()>1000) System.out.println(pelicula.toString());
     }
-//• Ordenar las películas de acuerdo a su duración (de mayor a menor) y mostrarlo en
-//pantalla.
-//• Ordenar las películas de acuerdo a su duración (de menor a mayor) y mostrarlo en
-//pantalla.
-//• Ordenar las películas por título, alfabéticamente y mostrarlo en pantalla.
-//• Ordenar las películas por director, alfabéticamente y mostrarlo en pantalla.
 
 }

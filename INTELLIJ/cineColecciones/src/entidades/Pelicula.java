@@ -12,7 +12,7 @@ public class Pelicula {
     public Pelicula() {
     }
 
-    public Pelicula(String titulo, String director, double duracion) {
+    public Pelicula(String titulo, String director, Integer duracion) {
         this.titulo = titulo;
         this.director = director;
         this.duracion = duracion;
@@ -39,12 +39,12 @@ public class Pelicula {
     }
 
     public void setDuracionConFormato(int horas,int minutos) {
-        this.duracion = ((Integer) (horas)+((Integer) minutos /60));
+        this.duracion = ((horas)*1000+(((minutos*1000) /60)));
     }
 
     public String getDuracionConFormato() {
-        int horas = (int) duracion;
-        int minutos = (int) ((duracion - horas) * 60);
+        int horas = (duracion/1000);
+        int minutos = (duracion - (horas*1000)) * 60 / 1000;
         return horas + ":" + minutos;
     }
 

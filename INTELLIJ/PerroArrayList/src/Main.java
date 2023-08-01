@@ -48,7 +48,7 @@ public class Main {
         /* probando for each
         int i = 1;
         for (String aux: listaRazas){
-            System.out.print(i+++" - ");
+            System.out.print(+"i++ - ");
             System.out.println(aux);
         }
          */

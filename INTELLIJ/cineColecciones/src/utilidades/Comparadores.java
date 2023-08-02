@@ -32,7 +32,7 @@ public class Comparadores {
     public static Comparator<Pelicula> ordenarPorDirector=new Comparator<Pelicula>() {
     @Override
     public int compare(Pelicula pelicula1, Pelicula pelicula2) {
-        return pelicula2.getDirector().compareTo(pelicula1.getDirector());
+        return pelicula1.getDirector().compareTo(pelicula2.getDirector());
     }
 };
 

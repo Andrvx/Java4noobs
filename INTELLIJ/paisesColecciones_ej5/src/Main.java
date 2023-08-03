@@ -1,8 +1,6 @@
-import entidades.Pais;
 import servicio.PaisServicio;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Scanner;
 
 // 5.
 //Se requiere un programa que lea y guarde países, y para evitar que se ingresen repetidos
@@ -19,10 +17,21 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) {
         PaisServicio paisServicio=new PaisServicio();
+        Scanner leer=new Scanner(System.in).useDelimiter("\n");
 
         paisServicio.agregarPaises();
 
+        System.out.println("Paises ordenados alfabéticamente sin repetir.");
         paisServicio.mostrarSetPaises();
+
+        System.out.println("Decime un país para borrar.");
+        String paisBorrar= leer.next();
+        leer.nextLine();
+
+        paisServicio.eliminarPais(paisBorrar);
+
+        paisServicio.mostrarSetPaises();
+
 
 
 

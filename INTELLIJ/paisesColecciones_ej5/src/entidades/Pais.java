@@ -1,8 +1,7 @@
 package entidades;
-
 import java.util.Objects;
 
-public class Pais {
+public class Pais implements Comparable<Pais>{
     private String pais;
 
     public Pais() {
@@ -21,6 +20,13 @@ public class Pais {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = (7 * hash) + Objects.hashCode(getPais());
+        return hash;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Pais)) return false;
@@ -29,14 +35,14 @@ public class Pais {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(getPais());
-    }
-
-    @Override
     public String toString() {
         return "Pais{" +
                 "pais='" + pais + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Pais pais) {
+        return this.pais.compareTo(pais.getPais());
     }
 }

@@ -1,7 +1,5 @@
 import servicio.PaisServicio;
-
 import java.util.Scanner;
-
 // 5.
 //Se requiere un programa que lea y guarde países, y para evitar que se ingresen repetidos
 //usaremos un conjunto. El programa pedirá un país en un bucle, se guardará el país en el
@@ -31,11 +29,5 @@ public class Main {
         paisServicio.eliminarPais(paisBorrar);
 
         paisServicio.mostrarSetPaises();
-
-
-
-
-
-
     }
 }

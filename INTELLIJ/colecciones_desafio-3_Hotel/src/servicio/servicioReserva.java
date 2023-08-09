@@ -1,2 +1,9 @@
-package servicio;public class servicioReserva {
+package servicio;
+
+public class servicioReserva {
+
+    public void borrarReserva(){
+        
+    }
+
 }

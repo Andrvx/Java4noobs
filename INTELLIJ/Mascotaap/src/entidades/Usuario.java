@@ -1,5 +1,6 @@
 package entidades;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Usuario {
@@ -9,6 +10,7 @@ public class Usuario {
     public Date nacimiento;
     public String pais;
 
+    ArrayList<Mascota> listaMascotas;
     public Usuario(){
 
     }

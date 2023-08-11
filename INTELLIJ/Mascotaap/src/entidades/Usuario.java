@@ -9,7 +9,6 @@ public class Usuario {
     public String dni;
     public Date nacimiento;
     public String pais;
-
     ArrayList<Mascota> listaMascotas;
     public Usuario(){
 

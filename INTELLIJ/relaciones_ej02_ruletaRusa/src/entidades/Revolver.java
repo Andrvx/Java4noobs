@@ -47,9 +47,23 @@ public class Revolver {
     }
 
 //• mojar(): devuelve true si la posición del agua coincide con la posición actual
-    public boolean mojar(int posicionActual)
+    public boolean mojar(){
+        boolean auxTirito=false;
+        if (this.posicionAgua==this.posicionActual){
+            auxTirito=true;
+        } else {
+            auxTirito=false;
+        }
+        return auxTirito;
+    }
 
 //• siguienteChorro(): cambia a la siguiente posición del tambor
-
+    public void siguienteChorro(){
+        if (this.posicionActual==6){
+            this.posicionActual=0;
+        } else {
+            this.posicionActual++;
+        }
+    }
 //• toString(): muestra información del revolver (posición actual y donde está el agua)
 }

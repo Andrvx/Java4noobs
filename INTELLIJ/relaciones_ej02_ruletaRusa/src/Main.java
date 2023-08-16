@@ -1,3 +1,9 @@
+import entidades.Juego;
+import entidades.Jugador;
+import entidades.Revolver;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 // 2. Realizar el juego de la ruleta rusa de agua en Java. Como muchos saben, el juego se trata de
 //un número de jugadores, que, con un revolver de agua, el cual posee una sola carga de agua,
 //se dispara y se moja. Las clases por hacer del juego son las siguientes:
@@ -31,6 +37,72 @@
 //Pensar la lógica necesaria para realizar esto, usando los atributos de la clase llenarJuego.
 public class Main {
     public static void main(String[] args) {
+        Scanner leer=new Scanner(System.in).useDelimiter("\n");
 
+        System.out.println("               *** Ruleta Rusa de Agua ***");
+        System.out.println("          (en mi vida ví un revolver de agua...)");
+
+        boolean salir=false;
+        do {
+            System.out.println("");
+            System.out.println("1- Insert Coin");
+            System.out.println("2- Salir");
+            String opcion= leer.next();
+            leer.nextLine();
+            switch (opcion) {
+                case "1":
+                    System.out.println("");
+                    Revolver revolver = new Revolver();
+                    Juego juego = new Juego();
+                    ArrayList<Jugador> jugadores = new ArrayList<>();
+                    int i = 1;
+                    boolean valid;
+                    boolean valid2=true;
+                    do {
+                        System.out.println("Ingrese el nombre del jugador n°" + i + ":");
+                        String auxNombre = leer.nextLine();
+                        //leer.nextLine();
+                        Jugador auxJug = new Jugador(i, auxNombre, false);
+                        jugadores.add(auxJug);
+                        valid = true;
+                        valid2=true;
+                        while (i > 1 && i < 6 && valid2) {
+                            System.out.println("Desea ingresar otro jugador?(s/n)");
+                            opcion = leer.next();
+                            leer.nextLine();
+                            if (opcion.equalsIgnoreCase("n")) {
+                                System.out.println("Ok, aivamo.");
+                                valid2 = false;
+                            } else if (opcion.equalsIgnoreCase("s")) {
+                                System.out.println("Dale.");
+                                i++;
+                                valid2 = false;
+                            } else {
+                                System.out.println("Es 's' o 'n' la cosa...");
+                                valid2 = true;
+                            }
+                        }
+                        if (i==1){
+                            i++;
+                        }
+                    } while (valid);
+
+                    System.out.println("");
+                    System.out.println(jugadores.toString());
+                    System.out.println("");
+
+                    juego.ronda();
+
+                    break;
+                case "2":
+                    salir=true;
+                    break;
+                default:
+                    System.out.println("Eso no es una opción, queride!");
+                    salir=false;
+            }
+        } while (!salir);
+        System.out.println("");
+        System.out.println("Ok, que te garúe finito!");
     }
 }

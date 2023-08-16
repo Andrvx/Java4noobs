@@ -1,11 +1,13 @@
 package entidades;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 //Clase llenarJuego: esta clase posee los siguientes atributos: Jugadores (conjunto de Jugadores) y
 //Revolver
 
 public class Juego {
+    Scanner leer=new Scanner(System.in).useDelimiter("\n");
     private ArrayList<Jugador> jugadores;
     private Revolver revolver;
 
@@ -30,7 +32,19 @@ public class Juego {
 //mojar. Al final del juego, se debe mostrar que jugador se mojó.
 
     public void ronda(){
-
+        for (int i=0;i<this.jugadores.size();i++) {
+            System.out.println(this.jugadores.get(i).getNombre()+", presiona enter para el tirito");
+            String auxTirito=leer.next();
+            if (this.jugadores.get(i).disparo(this.revolver)){
+                this.jugadores.get(i).setMojado(true);
+                System.out.println("Aiii te mojaste "+this.jugadores.get(i).getNombre());
+                System.out.println("GAME OVER");
+                break;
+            } else {
+                System.out.println("Zafaste "+this.jugadores.get(i).getNombre()+". Que pase el que sigue.");
+                System.out.println("");
+            }
+        }
     }
 
     public ArrayList<Jugador> getJugadores() {

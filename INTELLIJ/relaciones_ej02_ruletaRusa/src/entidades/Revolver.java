@@ -43,7 +43,7 @@ public class Revolver {
                 valid=true;
                 this.posicionAgua=posAux;
             }
-        }while (!false);
+        }while (!valid);
     }
 
 //• mojar(): devuelve true si la posición del agua coincide con la posición actual
@@ -66,4 +66,12 @@ public class Revolver {
         }
     }
 //• toString(): muestra información del revolver (posición actual y donde está el agua)
+
+    @Override
+    public String toString() {
+        return "Revolver{" +
+                "posicionActual=" + posicionActual +
+                ", posicionAgua=" + posicionAgua +
+                '}';
+    }
 }

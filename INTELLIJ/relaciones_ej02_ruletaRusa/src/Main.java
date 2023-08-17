@@ -52,9 +52,9 @@ public class Main {
             switch (opcion) {
                 case "1":
                     System.out.println("");
-                    Revolver revolver = new Revolver();
-                    Juego juego = new Juego();
+
                     ArrayList<Jugador> jugadores = new ArrayList<>();
+
                     int i = 1;
                     boolean valid;
                     boolean valid2=true;
@@ -66,6 +66,11 @@ public class Main {
                         jugadores.add(auxJug);
                         valid = true;
                         valid2=true;
+
+                        if (i==6){
+                            i++;
+                        }
+
                         while (i > 1 && i < 6 && valid2) {
                             System.out.println("Desea ingresar otro jugador?(s/n)");
                             opcion = leer.next();
@@ -73,19 +78,27 @@ public class Main {
                             if (opcion.equalsIgnoreCase("n")) {
                                 System.out.println("Ok, aivamo.");
                                 valid2 = false;
+                                valid=false;
                             } else if (opcion.equalsIgnoreCase("s")) {
                                 System.out.println("Dale.");
                                 i++;
                                 valid2 = false;
+                                valid=true;
                             } else {
                                 System.out.println("Es 's' o 'n' la cosa...");
                                 valid2 = true;
+                                valid=true;
                             }
                         }
+
                         if (i==1){
                             i++;
                         }
-                    } while (valid);
+                    } while (valid && i<7);
+
+                    Revolver revolver = new Revolver();
+                    revolver.llenarRevolver();
+                    Juego juego = new Juego(jugadores,revolver);
 
                     System.out.println("");
                     System.out.println(jugadores.toString());
@@ -98,7 +111,7 @@ public class Main {
                     salir=true;
                     break;
                 default:
-                    System.out.println("Eso no es una opción, queride!");
+                    System.out.println("Eso no es una opción!");
                     salir=false;
             }
         } while (!salir);

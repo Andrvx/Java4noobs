@@ -32,9 +32,13 @@ public class Juego {
 //mojar. Al final del juego, se debe mostrar que jugador se mojó.
 
     public void ronda(){
-        for (int i=0;i<this.jugadores.size();i++) {
+        int i=0;
+        do {
+            System.out.println(this.revolver.toString());
+            System.out.println("");
             System.out.println(this.jugadores.get(i).getNombre()+", presiona enter para el tirito");
-            String auxTirito=leer.next();
+            String auxTirito=leer.nextLine();
+            //leer.nextLine();
             if (this.jugadores.get(i).disparo(this.revolver)){
                 this.jugadores.get(i).setMojado(true);
                 System.out.println("Aiii te mojaste "+this.jugadores.get(i).getNombre());
@@ -43,8 +47,13 @@ public class Juego {
             } else {
                 System.out.println("Zafaste "+this.jugadores.get(i).getNombre()+". Que pase el que sigue.");
                 System.out.println("");
+                i++;
+                if ((i)==(this.jugadores.size())){
+                    i=0;
+                }
             }
-        }
+
+        } while (!this.jugadores.get(i).isMojado());
     }
 
     public ArrayList<Jugador> getJugadores() {

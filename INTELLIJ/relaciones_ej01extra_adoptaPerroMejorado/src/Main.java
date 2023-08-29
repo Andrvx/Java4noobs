@@ -50,6 +50,8 @@ public class Main {
         boolean exit=false;
         boolean valid1=false;
         boolean valid2=false;
+        boolean valid3=false;
+        boolean valid4=false;
         int i;
         do {
             System.out.println("*** Asigando perros a dueños ***");
@@ -64,7 +66,23 @@ public class Main {
                         valid1=true;
                         if (perro.getDuenio()==null){
                             valid2=true;
-                            perroAux=perro;
+                            do {
+                                System.out.println("Elegí un dueño para el perro");
+                                String duenioNombre=leer.nextLine();
+                                for (Persona duenio: personaLista){
+                                    if (duenio.getNombre().equalsIgnoreCase(duenioNombre)){
+                                        valid3=true;
+                                        if (duenio.getPerro()==null){
+                                            valid4=true;
+                                            duenio.setPerro(perro);
+                                            perro.setDuenio(duenio);
+                                        }
+                                    }
+                                }
+                                if ((!valid3)||(!valid4)){
+                                    System.out.println("Esa persona no existe o ya tiene perro.");
+                                }
+                            } while ((!valid3)||(!valid4));
                         }
                     }
                 }
@@ -73,27 +91,15 @@ public class Main {
                 }
             } while ((!valid2)||(!valid1));
 
-            do {
-                System.out.println("Elegí un dueño para el perro");
-                String duenioNombre=leer.nextLine();
 
-                for (Persona duenio: personaLista){
-                    if (duenio.getNombre().equalsIgnoreCase(duenioNombre)){
-                        valid1=true;
-                        if (duenio.getPerro()==null){
-                            valid2=true;
-                            duenioAux=duenio;
-                        }
-                    }
-                }
-                if ((!valid2)||(!valid1)){
-                    System.out.println("Esa persona no existe o ya tiene perro.");
-                }
-            } while ((!valid2)||(!valid1));
-
-                    
-
-
+            /*
+            for (Persona persona : personaLista) {
+                System.out.println(persona);
+            }
+            for (Perro perro : perroLista) {
+                System.out.println(perro);
+            }
+*/
             System.out.println("Querés asignar otro?(S/N)");
             String opc= leer.nextLine();
             if (opc.equalsIgnoreCase("s")){

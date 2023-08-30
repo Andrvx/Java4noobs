@@ -3,6 +3,7 @@
 import entidades.Animal;
 import entidades.Gato;
 import entidades.Perro;
+import interfaces.BaniarAnimal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +29,15 @@ public class Main {
         animalList.add(c);
 
         for (Animal aux: animalList){
+            aux.baniarGato();
+            aux.baniarPerro();
             aux.hacerRuido();
+
         }
 
+
+
     }
+
+
 }

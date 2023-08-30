@@ -1,4 +1,7 @@
 package entidades;
+
+import interfaces.BaniarAnimal;
+
 //EJERCICIO ANIMAL
 //Vamos a crear una clase Animal que tenga un método hacerRuido() que devuelva un saludo
 //“Hola”. Luego haremos clase Perro y clase Gato que extiendan de Animal y sobreescriban el
@@ -9,9 +12,19 @@ package entidades;
 //Animal c = new Gato();
 //Agregaremos a la lista a cada uno y luego, con un for each, recorreremos la lista llamando al
 //método hacerRuido() de cada ítem.
-public class Animal {
+public class Animal implements BaniarAnimal{
 
     public void hacerRuido(){
         System.out.println("Hola");
+    }
+
+    @Override
+    public void baniarGato() {
+        System.out.println("Bañá al gato si lo acostrumbraste de chico.");
+    }
+
+    @Override
+    public void baniarPerro() {
+        System.out.println("Bañá al perro si tiene bando a zanja.");
     }
 }

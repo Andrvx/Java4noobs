@@ -4,21 +4,21 @@ import enumeraciones.Color;
 import enumeraciones.ConsumoEnergetico;
 
 public class Lavadora extends Electrodomestico{
-    private Carga carga;
+    private Integer carga;
 
     public Lavadora() {
     }
 
-    public Lavadora(Integer precio, Color color, ConsumoEnergetico consumoEnergetico, Integer peso, Carga carga) {
+    public Lavadora(Integer precio, Color color, ConsumoEnergetico consumoEnergetico, Integer peso, Integer carga) {
         super(precio, color, consumoEnergetico, peso);
         this.carga = carga;
     }
 
-    public Carga getCarga() {
+    public Integer getCarga() {
         return carga;
     }
 
-    public void setCarga(Carga carga) {
+    public void setCarga(Integer carga) {
         this.carga = carga;
     }
 

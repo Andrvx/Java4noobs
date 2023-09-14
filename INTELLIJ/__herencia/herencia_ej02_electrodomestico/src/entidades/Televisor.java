@@ -29,7 +29,7 @@ public class Televisor extends Electrodomestico{
 
     @Override
     public String toString() {
-        return "Televisor{" +
+        return super.toString()+"Televisor{" +
                 "tamanio=" + tamanio +
                 ", TDT=" + TDT +
                 '}';

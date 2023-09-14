@@ -3,11 +3,11 @@ import enumeraciones.Color;
 import enumeraciones.ConsumoEnergetico;
 
 public class Electrodomestico {
-    private Integer precio;
-    private Color color;
-    private ConsumoEnergetico consumoEnergetico;
+    protected Integer precio;
+    protected Color color;
+    protected ConsumoEnergetico consumoEnergetico;
 
-    private Integer peso;
+    protected Integer peso;
 
     public Electrodomestico() {
     }
@@ -49,5 +49,15 @@ public class Electrodomestico {
 
     public void setPeso(Integer peso) {
         this.peso = peso;
+    }
+
+    @Override
+    public String toString() {
+        return "Electrodomestico{" +
+                "precio=" + precio +
+                ", color=" + color +
+                ", consumoEnergetico=" + consumoEnergetico +
+                ", peso=" + peso +
+                '}';
     }
 }

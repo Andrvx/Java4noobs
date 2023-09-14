@@ -1,15 +1,18 @@
 package servicio;
 import entidades.Electrodomestico;
 import entidades.Lavadora;
-import enumeraciones.Carga;
 
 public class LavadoraServicio extends ElectrodomesticoServicio{
+
     //• Método crearLavadora (): este método llama a crearElectrodomestico() de la clase
     //padre, lo utilizamos para llenar los atributos heredados del padre y después llenamos
     //el atributo propio de la lavadora.
-    public Electrodomestico crearLavadora(){
 
-        Lavadora lavadora= (Lavadora) super.crearElectrodomestico();
+    public Lavadora crearLavadora(){
+
+        Lavadora lavadora= new Lavadora();
+
+        super.crearElectrodomestico(lavadora);
 
         System.out.println("Ingrese el peso de carga");
         Integer auxCarga= leer.nextInt();
@@ -18,6 +21,8 @@ public class LavadoraServicio extends ElectrodomesticoServicio{
 
         return lavadora;
     }
+
+
     //• Método precioFinal(): este método será heredado y se le sumará la siguiente
     //funcionalidad. Si tiene una carga mayor de 30 kg, aumentará el precio en $500, si la
     //carga es menor o igual, no se incrementará el precio. Este método debe llamar al

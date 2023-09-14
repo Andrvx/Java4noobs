@@ -6,8 +6,11 @@ public class TelevisorServicio extends ElectrodomesticoServicio {
     //• Método crearTelevisor(): este método llama a crearElectrodomestico() de la clase
     //padre, lo utilizamos para llenar los atributos heredados del padre y después llenamos
     //los atributos del televisor.
-    public Electrodomestico crearTelevisor(){
-        Televisor televisor=(Televisor) super.crearElectrodomestico();
+    /*
+    public Televisor crearTelevisor(){
+        Televisor televisor=new ;
+
+        super.crearElectrodomestico(televisor);
 
         System.out.println("Ingrese el tamaño de la pantalla en pulgadas");
         Integer auxTamanio= leer.nextInt();
@@ -25,6 +28,8 @@ public class TelevisorServicio extends ElectrodomesticoServicio {
 
         return televisor;
     }
+    */
+
     //• Método precioFinal(): este método será heredado y se le sumará la siguiente
     //funcionalidad. Si el televisor tiene una resolución mayor de 40 pulgadas, se
     //incrementará el precio un 30% y si tiene un sintonizador TDT incorporado, aumentará

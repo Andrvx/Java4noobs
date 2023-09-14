@@ -1,5 +1,6 @@
 package servicio;
 import entidades.Electrodomestico;
+import entidades.Lavadora;
 import enumeraciones.Color;
 import enumeraciones.ConsumoEnergetico;
 import java.util.Scanner;
@@ -49,10 +50,10 @@ public class ElectrodomesticoServicio {
     //• Metodo crearElectrodomestico(): le pide la información al usuario y llena el
     //electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al
     //precio se le da un valor base de $1000.
-    public Electrodomestico crearElectrodomestico(){
+    protected void crearElectrodomestico(Electrodomestico electrodomestico){
         System.out.println("*** Crear Electrodoméstico ***");
 
-        Electrodomestico electrodomestico=new Electrodomestico();
+        //Electrodomestico electrodomestico=new Electrodomestico();
 
         System.out.println("Ingrese el color");
         String auxColor= leer.nextLine();
@@ -71,11 +72,12 @@ public class ElectrodomesticoServicio {
 
         electrodomestico.setPrecio(1000);
 
-        return electrodomestico;
+        //return electrodomestico;
     }
+
     //• Método precioFinal(): según el consumo energético y su tamaño, aumentará el valor del
     //precio.
-    public void precioFinal(Electrodomestico electrodomestico){
+    protected void precioFinal(Electrodomestico electrodomestico){
         Integer auxPrecioPeso=precioPorPeso(electrodomestico.getPeso());
         Integer auxPrecioConsumo=electrodomestico.getConsumoEnergetico().getPrecio();
         electrodomestico.setPrecio((electrodomestico.getPrecio())+auxPrecioConsumo+auxPrecioPeso);
